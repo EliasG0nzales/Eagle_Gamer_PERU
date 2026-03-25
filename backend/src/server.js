@@ -7,6 +7,7 @@ const excelRoutes       = require("./routes/excel");
 const movimientosRoutes = require("./routes/movimientos");
 const proveedoresRoutes = require("./routes/proveedores");
 const chatRoutes        = require("./routes/chat");
+const ventasRoutes = require("./routes/ventas");
 const { iniciarBot, getQR, getEstado } = require("./bot/whatsapp");
 
 const app  = express();
@@ -25,6 +26,7 @@ app.use("/api/excel",       excelRoutes);
 app.use("/api/movimientos", movimientosRoutes);
 app.use("/api/proveedores", proveedoresRoutes);
 app.use("/api/chat",        chatRoutes);
+app.use("/api/ventas", ventasRoutes);
 
 // ── WhatsApp QR endpoints ──
 app.get("/api/whatsapp/qr", (req, res) => {
